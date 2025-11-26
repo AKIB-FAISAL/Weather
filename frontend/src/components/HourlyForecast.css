@@ -1,0 +1,61 @@
+/* ===== Desktop styles (default) ===== */
+.hourly-container {
+  display: flex;
+  overflow-x: auto;           /* allow scroll if needed */
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;             /* center container on desktop */
+}
+
+.hourly-card {
+  min-width: 80px;
+  padding: 0.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color: white;
+  flex: 0 0 auto;             /* don’t shrink on desktop */
+}
+
+/* Desktop hover effect */
+.hourly-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Mobile styles ===== */
+@media (max-width: 480px) {
+    .hourly-container {
+        display: flex;
+        flex-wrap: nowrap;          /* single row scroll */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;  /* smooth scroll on iOS */
+        gap: 0.40rem;
+        padding: 0.50rem;
+        scroll-snap-type: x mandatory;     /* optional: snap to card */
+    }
+
+    .hourly-card {
+        flex: 0 0 calc((100% - 3 * 0.5rem) / 3); /* 4 cards visible, gap included */
+        min-width: 0;
+        max-width: none;
+        scroll-snap-align: start;    /* optional: snap each card */
+        padding: 1rem;
+        gap: 15px;
+    }
+
+    .hour-time,
+    .hour-temp,
+    .hour-rain {
+        font-size: 0.85rem;
+    }
+
+    /* Hide scrollbar for clean look */
+    .hourly-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+

@@ -1,0 +1,21 @@
+ .footer {
+  width: 100%;
+  background: rgba(20, 30, 48, 0.85);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer strong {
+  color: #ffdd57;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 13px;
+    padding: 12px 10px;
+  }
+}
